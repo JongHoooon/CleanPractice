@@ -12,6 +12,6 @@ struct VideoDetail {
     let title: String
     let overView: String
     let runtime: Int
-    let voteAverage: Float
+    let voteAverage: Double
     let releaseDate: String
 }
