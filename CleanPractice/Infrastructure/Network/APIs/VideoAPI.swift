@@ -17,7 +17,7 @@ enum VideoAPI: APIable {
         
         switch self {
         case let .fetchPopularMovies(page):
-            return baseURL+"/movie/popular&spage=\(page)"
+            return baseURL+"/movie/popular?page=\(page)"
         case let.fetchMovieDetail(id):
             return baseURL+"/movie/\(id)"
         }
@@ -38,7 +38,7 @@ enum VideoAPI: APIable {
     
     var headers: HTTPHeaders? {
         switch self {
-        default: return nil
+        default:                    return [Headers.accept, Headers.authorization]
         }
     }
     
