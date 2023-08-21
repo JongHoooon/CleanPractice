@@ -13,6 +13,7 @@ struct MoviesSceneDIContainer {
     func makeMoviesSceneCoordinator(
         navigationController: UINavigationController
     ) -> MoviesCoordinator {
+        
         return MoviesCoordinator(
             navigationController: navigationController,
             dependencies: self
@@ -23,12 +24,31 @@ struct MoviesSceneDIContainer {
 extension MoviesSceneDIContainer: MoviesListCoordinatorDependencies {
     
     // MARK: - Repository
-    
-    // MARK: - UseCase
-    
-    // MARK: - Movies List View
-    func makeMoviesListViewController() -> MoviesListViewController {
-        return MoviesListViewController()
+    func makeMovieRepository() -> MovieRepository {
+        
+        return DefaultMovieRepository()
     }
     
+    // MARK: - UseCase
+    func makeFetchPopularMoviesUseCase() -> FetchPopularMoviesUseCase {
+        
+        return DefaultFetchPopularMoviesUseCase(
+            movieRepository: makeMovieRepository()
+        )
+    }
+    
+    
+    // MARK: - Movies List View
+    func makeMoviesListViewModel(actions: MoviesListViewModelActions) -> MoviesListViewModel {
+        
+        return DefaultMoviesListViewModel(
+            fetchPopularMoviesUseCase: makeFetchPopularMoviesUseCase(),
+            actions: actions
+        )
+    }
+    
+    func makeMoviesListViewController(actions: MoviesListViewModelActions) -> MoviesListViewController {
+        
+        return MoviesListViewController(viewModel: makeMoviesListViewModel(actions: actions))
+    }
 }

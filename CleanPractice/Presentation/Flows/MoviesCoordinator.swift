@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MoviesListCoordinatorDependencies {
-    func makeMoviesListViewController() -> MoviesListViewController
+    func makeMoviesListViewController(actions: MoviesListViewModelActions) -> MoviesListViewController
 }
 
 final class MoviesCoordinator: Coordinatorable {
@@ -28,8 +28,15 @@ final class MoviesCoordinator: Coordinatorable {
     }
     
     func start() {
-        let vc = dependencies.makeMoviesListViewController()
+        let actions = MoviesListViewModelActions(showMovieDetails: showMovieDetailsViewController)
+        let vc = dependencies.makeMoviesListViewController(actions: actions)
         navigationController?.pushViewController(vc, animated: false)
         moiesListVC = vc
+    }
+}
+
+extension MoviesCoordinator {
+    func showMovieDetailsViewController(video: Video) {
+        
     }
 }

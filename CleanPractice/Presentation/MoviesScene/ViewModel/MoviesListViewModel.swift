@@ -11,13 +11,15 @@ struct MoviesListViewModelActions {
     let showMovieDetails: (Video) -> Void
 }
 
-protocol MoviesListViewModelInput {}
+protocol MoviesListViewModelInput {
+    func viewDidLoad()
+}
 
 protocol MoviesListViewModelOutput {}
 
-protocol MoviesListVIewModel: MoviesListViewModelInput, MoviesListViewModelOutput {}
+protocol MoviesListViewModel: MoviesListViewModelInput, MoviesListViewModelOutput {}
 
-final class DefaultMoviesListViewModel: MoviesListVIewModel {
+final class DefaultMoviesListViewModel: MoviesListViewModel {
     
     private let fetchPopularMoviesUseCase: FetchPopularMoviesUseCase
 #warning("let으로 할건데 왜 opional로 ???? ")
@@ -36,6 +38,17 @@ final class DefaultMoviesListViewModel: MoviesListVIewModel {
     }
     
     // MARK: - Input
+    func viewDidLoad() {
+        Task {
+            do {
+                let videosPage = try await fetchPopularMoviesUseCase.execute(page: 1)
+                print(videosPage)
+            } catch {
+                print(error)
+            }
+        }
+        
+    }
     
     // MARK: - Output
     
