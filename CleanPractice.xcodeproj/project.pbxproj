@@ -26,10 +26,12 @@
 		EDFC579B2A93734C0007EB98 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC579A2A93734C0007EB98 /* Endpoint.swift */; };
 		EDFC579D2A9373BA0007EB98 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC579C2A9373BA0007EB98 /* Headers.swift */; };
 		EDFC579F2A9373DA0007EB98 /* VideoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC579E2A9373DA0007EB98 /* VideoAPI.swift */; };
-		EDFC57A22A937B1D0007EB98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EDFC57A12A937B1D0007EB98 /* Alamofire */; };
 		EDFC57A42A937B5B0007EB98 /* APIAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57A32A937B5B0007EB98 /* APIAble.swift */; };
 		EDFC57A82A937ED50007EB98 /* DefaultMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57A72A937ED50007EB98 /* DefaultMovieRepository.swift */; };
 		EDFC57AD2A9380360007EB98 /* PopularMoviesDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57AC2A9380360007EB98 /* PopularMoviesDTO+Mapping.swift */; };
+		EDFC57B12A9389D30007EB98 /* CallRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57B02A9389D30007EB98 /* CallRequestable.swift */; };
+		EDFC57B32A938DA60007EB98 /* VideoDetailDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57B22A938DA60007EB98 /* VideoDetailDTO+Mapping.swift */; };
+		EDFC57B62A93900C0007EB98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EDFC57B52A93900C0007EB98 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		EDFC57A32A937B5B0007EB98 /* APIAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAble.swift; sourceTree = "<group>"; };
 		EDFC57A72A937ED50007EB98 /* DefaultMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMovieRepository.swift; sourceTree = "<group>"; };
 		EDFC57AC2A9380360007EB98 /* PopularMoviesDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopularMoviesDTO+Mapping.swift"; sourceTree = "<group>"; };
+		EDFC57B02A9389D30007EB98 /* CallRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRequestable.swift; sourceTree = "<group>"; };
+		EDFC57B22A938DA60007EB98 /* VideoDetailDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoDetailDTO+Mapping.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDFC57A22A937B1D0007EB98 /* Alamofire in Frameworks */,
+				EDFC57B62A93900C0007EB98 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +216,7 @@
 		EDFC57942A93729D0007EB98 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				EDFC57B02A9389D30007EB98 /* CallRequestable.swift */,
 				EDFC57A72A937ED50007EB98 /* DefaultMovieRepository.swift */,
 			);
 			path = Repositories;
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFC57AC2A9380360007EB98 /* PopularMoviesDTO+Mapping.swift */,
+				EDFC57B22A938DA60007EB98 /* VideoDetailDTO+Mapping.swift */,
 			);
 			path = DataMapping;
 			sourceTree = "<group>";
@@ -278,7 +284,7 @@
 			);
 			name = CleanPractice;
 			packageProductDependencies = (
-				EDFC57A12A937B1D0007EB98 /* Alamofire */,
+				EDFC57B52A93900C0007EB98 /* Alamofire */,
 			);
 			productName = CleanPractice;
 			productReference = ED607C8C2A93246F00859DFC /* CleanPractice.app */;
@@ -309,7 +315,7 @@
 			);
 			mainGroup = ED607C832A93246F00859DFC;
 			packageReferences = (
-				EDFC57A02A937B1D0007EB98 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EDFC57B42A93900C0007EB98 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = ED607C8D2A93246F00859DFC /* Products */;
 			projectDirPath = "";
@@ -339,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDFC577C2A934A780007EB98 /* AppDIContainer.swift in Sources */,
+				EDFC57B12A9389D30007EB98 /* CallRequestable.swift in Sources */,
 				ED607C902A93246F00859DFC /* AppDelegate.swift in Sources */,
 				EDFC57922A9371390007EB98 /* FetchMovieDetailUseCase.swift in Sources */,
 				ED607C922A93246F00859DFC /* SceneDelegate.swift in Sources */,
@@ -350,6 +357,7 @@
 				EDFC57A42A937B5B0007EB98 /* APIAble.swift in Sources */,
 				EDFC57812A934B5E0007EB98 /* MoviesCoordinator.swift in Sources */,
 				EDFC579F2A9373DA0007EB98 /* VideoAPI.swift in Sources */,
+				EDFC57B32A938DA60007EB98 /* VideoDetailDTO+Mapping.swift in Sources */,
 				EDFC579D2A9373BA0007EB98 /* Headers.swift in Sources */,
 				EDFC57872A9354A80007EB98 /* Video.swift in Sources */,
 				EDFC57A82A937ED50007EB98 /* DefaultMovieRepository.swift in Sources */,
@@ -566,7 +574,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EDFC57A02A937B1D0007EB98 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		EDFC57B42A93900C0007EB98 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -577,9 +585,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDFC57A12A937B1D0007EB98 /* Alamofire */ = {
+		EDFC57B52A93900C0007EB98 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EDFC57A02A937B1D0007EB98 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = EDFC57B42A93900C0007EB98 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
