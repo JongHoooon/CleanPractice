@@ -32,6 +32,7 @@
 		EDFC57B12A9389D30007EB98 /* CallRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57B02A9389D30007EB98 /* CallRequestable.swift */; };
 		EDFC57B32A938DA60007EB98 /* VideoDetailDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57B22A938DA60007EB98 /* VideoDetailDTO+Mapping.swift */; };
 		EDFC57B62A93900C0007EB98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EDFC57B52A93900C0007EB98 /* Alamofire */; };
+		EDFC57BA2A9396820007EB98 /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57B92A9396820007EB98 /* MoviesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		EDFC57AC2A9380360007EB98 /* PopularMoviesDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopularMoviesDTO+Mapping.swift"; sourceTree = "<group>"; };
 		EDFC57B02A9389D30007EB98 /* CallRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRequestable.swift; sourceTree = "<group>"; };
 		EDFC57B22A938DA60007EB98 /* VideoDetailDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoDetailDTO+Mapping.swift"; sourceTree = "<group>"; };
+		EDFC57B92A9396820007EB98 /* MoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +140,8 @@
 		EDFC57772A9349DF0007EB98 /* MoviesScene */ = {
 			isa = PBXGroup;
 			children = (
-				EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */,
+				EDFC57B82A9396560007EB98 /* ViewModel */,
+				EDFC57B72A9396450007EB98 /* View */,
 			);
 			path = MoviesScene;
 			sourceTree = "<group>";
@@ -267,6 +270,22 @@
 			path = DataMapping;
 			sourceTree = "<group>";
 		};
+		EDFC57B72A9396450007EB98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDFC57B82A9396560007EB98 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDFC57B92A9396820007EB98 /* MoviesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,6 +382,7 @@
 				EDFC57A82A937ED50007EB98 /* DefaultMovieRepository.swift in Sources */,
 				EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */,
 				EDFC57992A93733B0007EB98 /* APIKey.swift in Sources */,
+				EDFC57BA2A9396820007EB98 /* MoviesListViewModel.swift in Sources */,
 				EDFC57AD2A9380360007EB98 /* PopularMoviesDTO+Mapping.swift in Sources */,
 				EDFC577E2A934B040007EB98 /* MoviesSceneDIContainer.swift in Sources */,
 			);
