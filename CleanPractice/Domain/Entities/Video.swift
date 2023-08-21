@@ -12,3 +12,9 @@ struct Video {
     let voteAverage: Double
     let releaseDate: String
 }
+
+struct VideosPage {
+    let page: Int
+    let totalPages: Int
+    let videos: [Video]
+}
