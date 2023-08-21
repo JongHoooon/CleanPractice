@@ -66,7 +66,7 @@ extension PopularMoviesDTO.VideoDTO {
             backdropPath: getImageURL(path: backdropPath),
             title: title ?? "",
             voteAverage: voteAverage ?? -1.0,
-            releaseDate: tranforDateFormat(date: releaseDate)
+            releaseDate: tranformDateFormat(date: releaseDate)
         )
     }
 }
@@ -82,7 +82,7 @@ private extension PopularMoviesDTO.VideoDTO {
         return Endpoint.imageBaseURL + path
     }
     
-    func tranforDateFormat(date: String?) -> String {
+    func tranformDateFormat(date: String?) -> String {
         guard let date = date else { return "" }
         
         let dateSplits = date.split(separator: "-")
