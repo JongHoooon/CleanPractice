@@ -216,7 +216,6 @@
 		EDFC57942A93729D0007EB98 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				EDFC57B02A9389D30007EB98 /* CallRequestable.swift */,
 				EDFC57A72A937ED50007EB98 /* DefaultMovieRepository.swift */,
 			);
 			path = Repositories;
@@ -250,6 +249,7 @@
 		EDFC57AA2A9380010007EB98 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EDFC57B02A9389D30007EB98 /* CallRequestable.swift */,
 				EDFC57982A93733B0007EB98 /* APIKey.swift */,
 				EDFC579A2A93734C0007EB98 /* Endpoint.swift */,
 				EDFC579C2A9373BA0007EB98 /* Headers.swift */,
