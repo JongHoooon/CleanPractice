@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FetchPopularMoviesUseCase {
-    func execute(page: Int) -> [Video]
+    func execute(page: Int) async throws -> [Video]
 }
 
 final class DefaultFetchPopularMoviesUseCase: FetchPopularMoviesUseCase {
@@ -19,8 +19,8 @@ final class DefaultFetchPopularMoviesUseCase: FetchPopularMoviesUseCase {
         self.movieRepository = movieRepository
     }
     
-    func execute(page: Int) -> [Video] {
+    func execute(page: Int) async throws -> [Video] {
         
-        return movieRepository.fetchPopular(page: page)
+        return try await movieRepository.fetchPopular(page: page)
     }
 }

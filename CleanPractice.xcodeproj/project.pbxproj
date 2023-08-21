@@ -22,6 +22,10 @@
 		EDFC57902A9370630007EB98 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC578F2A9370630007EB98 /* MovieRepository.swift */; };
 		EDFC57922A9371390007EB98 /* FetchMovieDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57912A9371390007EB98 /* FetchMovieDetailUseCase.swift */; };
 		EDFC57972A93731E0007EB98 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EDFC57962A93731E0007EB98 /* .gitignore */; };
+		EDFC57992A93733B0007EB98 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57982A93733B0007EB98 /* APIKey.swift */; };
+		EDFC579B2A93734C0007EB98 /* Endpoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC579A2A93734C0007EB98 /* Endpoin.swift */; };
+		EDFC579D2A9373BA0007EB98 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC579C2A9373BA0007EB98 /* Header.swift */; };
+		EDFC579F2A9373DA0007EB98 /* VideoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC579E2A9373DA0007EB98 /* VideoAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		EDFC578F2A9370630007EB98 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		EDFC57912A9371390007EB98 /* FetchMovieDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMovieDetailUseCase.swift; sourceTree = "<group>"; };
 		EDFC57962A93731E0007EB98 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EDFC57982A93733B0007EB98 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EDFC579A2A93734C0007EB98 /* Endpoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoin.swift; sourceTree = "<group>"; };
+		EDFC579C2A9373BA0007EB98 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		EDFC579E2A9373DA0007EB98 /* VideoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +210,10 @@
 		EDFC57952A9372A30007EB98 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EDFC57982A93733B0007EB98 /* APIKey.swift */,
+				EDFC579A2A93734C0007EB98 /* Endpoin.swift */,
+				EDFC579C2A9373BA0007EB98 /* Header.swift */,
+				EDFC579E2A9373DA0007EB98 /* VideoAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -284,10 +296,14 @@
 				EDFC57902A9370630007EB98 /* MovieRepository.swift in Sources */,
 				EDFC57832A934FE30007EB98 /* AppFlowCoordinator.swift in Sources */,
 				EDFC57892A9357F80007EB98 /* VideoDetail.swift in Sources */,
+				EDFC579B2A93734C0007EB98 /* Endpoin.swift in Sources */,
 				EDFC578C2A935A130007EB98 /* FetchPopularMoviesUseCase.swift in Sources */,
 				EDFC57812A934B5E0007EB98 /* MoviesCoordinator.swift in Sources */,
+				EDFC579F2A9373DA0007EB98 /* VideoAPI.swift in Sources */,
+				EDFC579D2A9373BA0007EB98 /* Header.swift in Sources */,
 				EDFC57872A9354A80007EB98 /* Video.swift in Sources */,
 				EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */,
+				EDFC57992A93733B0007EB98 /* APIKey.swift in Sources */,
 				EDFC577E2A934B040007EB98 /* MoviesSceneDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

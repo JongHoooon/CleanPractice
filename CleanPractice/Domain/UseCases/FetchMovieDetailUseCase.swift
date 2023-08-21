@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FetchMovieDetailUseCase {
-    func execute(id: Int) -> VideoDetail
+    func execute(id: Int) async throws -> VideoDetail
 }
 
 final class DefaultFetchMovieDetailUseCase: FetchMovieDetailUseCase {
@@ -19,8 +19,8 @@ final class DefaultFetchMovieDetailUseCase: FetchMovieDetailUseCase {
         self.movieRepository = movieRepository
     }
     
-    func execute(id: Int) -> VideoDetail {
+    func execute(id: Int) async throws -> VideoDetail {
         
-        return movieRepository.fetchDetail(id: id)
+        return try await movieRepository.fetchDetail(id: id)
     }
 }
