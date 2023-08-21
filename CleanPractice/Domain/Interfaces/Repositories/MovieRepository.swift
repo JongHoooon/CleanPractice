@@ -6,6 +6,6 @@
 //
 
 protocol MovieRepository {
-    func fetchPopular(page: Int) async throws -> [Video]
+    func fetchPopular(page: Int) async throws -> VideosPage
     func fetchDetail(id: Int) async throws -> VideoDetail
 }
