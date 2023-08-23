@@ -7,7 +7,7 @@
 
 struct Video {
     let id: Int
-    let backdropPath: String
+    let posterPath: String
     let title: String
     let voteAverage: Double
     let releaseDate: String
