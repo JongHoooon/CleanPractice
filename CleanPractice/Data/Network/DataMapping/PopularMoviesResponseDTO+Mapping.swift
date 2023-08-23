@@ -1,11 +1,11 @@
 //
-//  PopularMoviesDTO.swift
+//  PopularMoviesResponseDTO.swift
 //  CleanPractice
 //
 //  Created by JongHoon on 2023/08/21.
 //
 
-struct PopularMoviesDTO: Decodable {
+struct PopularMoviesResponseDTO: Decodable {
     let page: Int?
     let videoDTOs: [VideoDTO]?
     let totalPages, totalResults: Int?
@@ -49,7 +49,7 @@ struct PopularMoviesDTO: Decodable {
 
 // MARK: - Mapping to Domain
 
-extension PopularMoviesDTO {
+extension PopularMoviesResponseDTO {
     func toDomain() -> VideosPage {
         return VideosPage(
             page: page ?? -1,
@@ -59,11 +59,11 @@ extension PopularMoviesDTO {
     }
 }
 
-extension PopularMoviesDTO.VideoDTO {
+extension PopularMoviesResponseDTO.VideoDTO {
     func toDomain() -> Video {
         return Video(
             id: id ?? -1,
-            backdropPath: getImageURL(path: backdropPath),
+            posterPath: getImageURL(path: posterPath),
             title: title ?? "",
             voteAverage: voteAverage ?? -1.0,
             releaseDate: tranformDateFormat(date: releaseDate)
@@ -74,7 +74,7 @@ extension PopularMoviesDTO.VideoDTO {
 
 // MARK: - Private
 
-private extension PopularMoviesDTO.VideoDTO {
+private extension PopularMoviesResponseDTO.VideoDTO {
     
     func getImageURL(path: String?) -> String {
         guard let path = path else { return "" }

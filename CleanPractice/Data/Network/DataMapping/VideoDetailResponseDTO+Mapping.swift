@@ -1,11 +1,11 @@
 //
-//  VideoDetailDTO+Mapping.swift
+//  VideoDetailResponseDTO+Mapping.swift
 //  CleanPractice
 //
 //  Created by JongHoon on 2023/08/21.
 //
 
-struct VideoDetailDTO: Codable {
+struct VideoDetailResponseDTO: Codable {
     let adult: Bool?
     let backdropPath: String?
     let budget: Int?
@@ -45,7 +45,7 @@ struct VideoDetailDTO: Codable {
 }
 
 // MARK: - Mapping to Domain
-extension VideoDetailDTO {
+extension VideoDetailResponseDTO {
     func toDomain() -> VideoDetail {
         return VideoDetail(
             id: id ?? -1,
@@ -61,7 +61,7 @@ extension VideoDetailDTO {
 }
 
 // MARK: - Private
-private extension VideoDetailDTO {
+private extension VideoDetailResponseDTO {
     
     func getImageURL(path: String?) -> String {
         guard let path = path else { return "" }

@@ -13,7 +13,7 @@ final class DefaultMovieRepository: MovieRepository, CallRequestable {
     func fetchPopular(page: Int) async throws -> VideosPage {
         do {
             let popularMoviesDTO = try await callRequest(
-                of: PopularMoviesDTO.self,
+                of: PopularMoviesResponseDTO.self,
                 movieAPI: .fetchPopularMovies(page: page)
             )
             
@@ -26,7 +26,7 @@ final class DefaultMovieRepository: MovieRepository, CallRequestable {
     func fetchDetail(id: Int) async throws -> VideoDetail {
         do {
             let movieDetailDTO = try await callRequest(
-                of: VideoDetailDTO.self,
+                of: VideoDetailResponseDTO.self,
                 movieAPI: .fetchMovieDetail(id: id)
             )
             
