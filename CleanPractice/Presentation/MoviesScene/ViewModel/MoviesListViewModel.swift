@@ -7,6 +7,9 @@
 
 import Foundation
 
+import RxCocoa
+import RxSwift
+
 struct MoviesListViewModelActions {
     let showMovieDetails: (Video) -> Void
 }
@@ -15,7 +18,9 @@ protocol MoviesListViewModelInput {
     func viewDidLoad()
 }
 
-protocol MoviesListViewModelOutput {}
+protocol MoviesListViewModelOutput {
+    var movieItemsRelay: BehaviorRelay<[Video]> { get }
+}
 
 protocol MoviesListViewModel: MoviesListViewModelInput, MoviesListViewModelOutput {}
 
@@ -39,19 +44,23 @@ final class DefaultMoviesListViewModel: MoviesListViewModel {
     
     // MARK: - Input
     func viewDidLoad() {
+        fetchMovies(page: 1)
+    }
+    
+    // MARK: - Output
+    var movieItemsRelay = BehaviorRelay<[Video]>(value: [])
+}
+
+private extension DefaultMoviesListViewModel {
+    
+    func fetchMovies(page: Int) {
         Task {
             do {
                 let videosPage = try await fetchPopularMoviesUseCase.execute(page: 1)
-                print(videosPage)
+                movieItemsRelay.accept(videosPage.videos)
             } catch {
                 print(error)
             }
         }
-        
     }
-    
-    // MARK: - Output
-    
-        
-    
 }
