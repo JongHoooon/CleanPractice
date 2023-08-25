@@ -56,6 +56,13 @@ extension MoviesListViewController {
     
     private func bindIntput() {
         
+        movieTableView.rx.modelSelected(Video.self)
+            .bind(
+                with: self,
+                onNext: { owner, video in
+                    owner.viewModel.didSelectItem(id: video.id)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindOutput() {

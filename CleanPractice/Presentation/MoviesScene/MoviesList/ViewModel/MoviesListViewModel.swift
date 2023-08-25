@@ -11,11 +11,12 @@ import RxCocoa
 import RxSwift
 
 struct MoviesListViewModelActions {
-    let showMovieDetails: (Video) -> Void
+    let showMovieDetails: (Int) -> Void
 }
 
 protocol MoviesListViewModelInput {
     func viewDidLoad()
+    func didSelectItem(id: Int)
 }
 
 protocol MoviesListViewModelOutput {
@@ -33,7 +34,6 @@ final class DefaultMoviesListViewModel: MoviesListViewModel {
     private var page: [VideosPage] = []
 
     // MARK: - Init
-    
     init(
         fetchPopularMoviesUseCase: FetchPopularMoviesUseCase,
         actions: MoviesListViewModelActions
@@ -45,6 +45,10 @@ final class DefaultMoviesListViewModel: MoviesListViewModel {
     // MARK: - Input
     func viewDidLoad() {
         fetchMovies(page: 1)
+    }
+    
+    func didSelectItem(id: Int) {
+        actions?.showMovieDetails(id)
     }
     
     // MARK: - Output

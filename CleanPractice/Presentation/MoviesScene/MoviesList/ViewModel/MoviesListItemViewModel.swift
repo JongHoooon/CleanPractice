@@ -19,7 +19,7 @@ import RxRelay
  does not contain any domain model to prevent views
  accessing it
 */
-
+#warning("image data 가져오는 통신은 view model에서만 했을때 placeHolder같은 처리는 어떻게???")
 
 final class MoviesListItemViewModel {
     

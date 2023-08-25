@@ -13,4 +13,5 @@ enum ImageSpace {
             .systemGray,
             renderingMode: .alwaysOriginal
         )
+    static let chevronLeft = UIImage(systemName: "chevron.backward")
 }

@@ -39,6 +39,11 @@ extension MoviesSceneDIContainer: MoviesListCoordinatorDependencies {
     
     
     // MARK: - Movies List View
+    func makeMoviesListViewController(actions: MoviesListViewModelActions) -> MoviesListViewController {
+        
+        return MoviesListViewController(viewModel: makeMoviesListViewModel(actions: actions))
+    }
+    
     func makeMoviesListViewModel(actions: MoviesListViewModelActions) -> MoviesListViewModel {
         
         return DefaultMoviesListViewModel(
@@ -47,8 +52,21 @@ extension MoviesSceneDIContainer: MoviesListCoordinatorDependencies {
         )
     }
     
-    func makeMoviesListViewController(actions: MoviesListViewModelActions) -> MoviesListViewController {
-        
-        return MoviesListViewController(viewModel: makeMoviesListViewModel(actions: actions))
+    
+    // MARK: - Movie Details View
+    func makeMovieDetailsViewController(
+        actions:MovieDetailViewModelActions,
+        id: Int
+    ) -> MovieDetailsViewController {
+        return MovieDetailsViewController(viewModel: makeMovieDetailsViewModel(actions: actions, id: id))
     }
+    
+    func makeMovieDetailsViewModel(
+        actions: MovieDetailViewModelActions,
+        id: Int
+    ) -> MovieDetailsViewModel {
+        return DefaultMovieDetailsViewModel(actions: actions, id: id)
+    }
+    
+
 }
