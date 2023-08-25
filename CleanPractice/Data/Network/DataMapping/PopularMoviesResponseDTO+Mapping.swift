@@ -62,7 +62,7 @@ extension PopularMoviesResponseDTO {
 extension PopularMoviesResponseDTO.VideoDTO {
     func toDomain() -> Video {
         return Video(
-            id: id ?? -1,
+            id: id,
             posterPath: getImageURL(path: posterPath),
             title: title,
             voteAverage: voteAverage,
