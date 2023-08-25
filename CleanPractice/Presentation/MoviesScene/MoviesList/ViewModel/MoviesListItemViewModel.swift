@@ -27,7 +27,7 @@ final class MoviesListItemViewModel {
     init(movie: Video) {
         let voteAverageText = "⭐️ " + String(format: "%.1f", movie.voteAverage ?? 0.0)
         let releaseDateText = movie.releaseDate ?? ""
-        let infoText = voteAverageText + " " + releaseDateText
+        let infoText = voteAverageText + "  " + releaseDateText
         titleTextRelay = .init(value: movie.title ?? "제목이 없습니다.")
         infoTextRelay = .init(value: infoText)
         posterImagePath = .init(value: movie.posterPath ?? "")
