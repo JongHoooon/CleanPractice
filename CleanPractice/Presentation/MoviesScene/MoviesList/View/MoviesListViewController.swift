@@ -14,6 +14,8 @@ final class MoviesListViewController: UIViewController {
     
     // MARK: - Property
     private let viewModel: MoviesListViewModel
+    #warning("cell 한테 전달해주기 위해 존재하는거같은데,,, 여기있는게 맞는지??")
+    private let imagesRepository: ImageRepository
     private let disposeBag = DisposeBag()
     
     // MARK: - UI
@@ -24,8 +26,12 @@ final class MoviesListViewController: UIViewController {
     }()
     
     // MARK: - Init
-    init(viewModel: MoviesListViewModel) {
+    init(
+        viewModel: MoviesListViewModel,
+        imageRepository: ImageRepository
+    ) {
         self.viewModel = viewModel
+        self.imagesRepository = imageRepository
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -72,8 +78,13 @@ extension MoviesListViewController {
             .bind(to: movieTableView.rx.items(
                 cellIdentifier: MoviesListItemCell.identifier,
                 cellType: MoviesListItemCell.self
-            )) { (index, element, cell) in
-                cell.bind(viewModel: MoviesListItemViewModel(movie: element))
+            )) { [weak self] (index, element, cell) in
+                guard let imagesRepository = self?.imagesRepository else { return }
+                
+                cell.bind(
+                    viewModel: MoviesListItemViewModel(movie: element),
+                    imageRepository: imagesRepository
+                )
             }
             .disposed(by: disposeBag)
     }

@@ -21,6 +21,7 @@ final class MoviesListItemCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemGray6
+        imageView.image = ImageSpace.popcornImage
         
         return imageView   
     }()
@@ -64,7 +65,10 @@ final class MoviesListItemCell: UITableViewCell {
     }
     
     // MARK: - Bind
-    func bind(viewModel: MoviesListItemViewModel) {
+    func bind(
+        viewModel: MoviesListItemViewModel,
+        imageRepository: ImageRepository
+    ) {
         self.viewModel = viewModel
         
         viewModel.titleTextRelay
@@ -77,17 +81,16 @@ final class MoviesListItemCell: UITableViewCell {
             .drive(infoLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.posterImagePath
-            .bind(
-                with: self,
-                onNext: { owner, path in
-                    owner.posterImageView.fetchImage(
-                        urlString: path,
-                        placeholder: ImageSpace.popcornImage
-                    )
-                }
-            )
-            .disposed(by: disposeBag)
+        let imagePath = viewModel.posterImagePath.value
+        Task {
+            do {
+                let imageData = try await imageRepository.fetchImage(imagePath: imagePath)
+                posterImageView.image = UIImage(data: imageData)
+            } catch {
+                print(error)
+                posterImageView.image = ImageSpace.popcornImage
+            }
+        }
     }
 }
 

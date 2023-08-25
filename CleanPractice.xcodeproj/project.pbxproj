@@ -22,6 +22,8 @@
 		EDE518552A96316B00C16C9E /* ImageSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE518542A96316B00C16C9E /* ImageSpace.swift */; };
 		EDE5185D2A96412100C16C9E /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5185C2A96412100C16C9E /* MovieDetailsViewController.swift */; };
 		EDE518602A96428400C16C9E /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5185F2A96428400C16C9E /* MovieDetailsViewModel.swift */; };
+		EDE518922A98B92800C16C9E /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE518912A98B92800C16C9E /* ImageRepository.swift */; };
+		EDE518942A98B9BB00C16C9E /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE518932A98B9BB00C16C9E /* DefaultImageRepository.swift */; };
 		EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */; };
 		EDFC577C2A934A780007EB98 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577B2A934A780007EB98 /* AppDIContainer.swift */; };
 		EDFC577E2A934B040007EB98 /* MoviesSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */; };
@@ -61,6 +63,8 @@
 		EDE518542A96316B00C16C9E /* ImageSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpace.swift; sourceTree = "<group>"; };
 		EDE5185C2A96412100C16C9E /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		EDE5185F2A96428400C16C9E /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		EDE518912A98B92800C16C9E /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		EDE518932A98B9BB00C16C9E /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
 		EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		EDFC577B2A934A780007EB98 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSceneDIContainer.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFC578F2A9370630007EB98 /* MovieRepository.swift */,
+				EDE518912A98B92800C16C9E /* ImageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFC57A72A937ED50007EB98 /* DefaultMovieRepository.swift */,
+				EDE518932A98B9BB00C16C9E /* DefaultImageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				EDFC57B32A938DA60007EB98 /* VideoDetailResponseDTO+Mapping.swift in Sources */,
 				EDE518602A96428400C16C9E /* MovieDetailsViewModel.swift in Sources */,
 				EDFC579D2A9373BA0007EB98 /* Headers.swift in Sources */,
+				EDE518922A98B92800C16C9E /* ImageRepository.swift in Sources */,
 				EDFC57872A9354A80007EB98 /* Video.swift in Sources */,
 				EDFC57A82A937ED50007EB98 /* DefaultMovieRepository.swift in Sources */,
 				EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */,
@@ -483,6 +490,7 @@
 				EDFC57AD2A9380360007EB98 /* PopularMoviesResponseDTO+Mapping.swift in Sources */,
 				EDE518552A96316B00C16C9E /* ImageSpace.swift in Sources */,
 				EDFC577E2A934B040007EB98 /* MoviesSceneDIContainer.swift in Sources */,
+				EDE518942A98B9BB00C16C9E /* DefaultImageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

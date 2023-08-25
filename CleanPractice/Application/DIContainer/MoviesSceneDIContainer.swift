@@ -29,6 +29,11 @@ extension MoviesSceneDIContainer: MoviesListCoordinatorDependencies {
         return DefaultMovieRepository()
     }
     
+    func makeImageRepository() -> ImageRepository {
+        
+        return DefaultImageRepository()
+    }
+    
     // MARK: - UseCase
     func makeFetchPopularMoviesUseCase() -> FetchPopularMoviesUseCase {
         
@@ -41,7 +46,10 @@ extension MoviesSceneDIContainer: MoviesListCoordinatorDependencies {
     // MARK: - Movies List View
     func makeMoviesListViewController(actions: MoviesListViewModelActions) -> MoviesListViewController {
         
-        return MoviesListViewController(viewModel: makeMoviesListViewModel(actions: actions))
+        return MoviesListViewController(
+            viewModel: makeMoviesListViewModel(actions: actions),
+            imageRepository: makeImageRepository()
+        )
     }
     
     func makeMoviesListViewModel(actions: MoviesListViewModelActions) -> MoviesListViewModel {
