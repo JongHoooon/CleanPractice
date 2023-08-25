@@ -33,7 +33,7 @@
 		EDFC57892A9357F80007EB98 /* VideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57882A9357F80007EB98 /* VideoDetail.swift */; };
 		EDFC578C2A935A130007EB98 /* FetchPopularMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC578B2A935A130007EB98 /* FetchPopularMoviesUseCase.swift */; };
 		EDFC57902A9370630007EB98 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC578F2A9370630007EB98 /* MovieRepository.swift */; };
-		EDFC57922A9371390007EB98 /* FetchMovieDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57912A9371390007EB98 /* FetchMovieDetailUseCase.swift */; };
+		EDFC57922A9371390007EB98 /* FetchMovieDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57912A9371390007EB98 /* FetchMovieDetailsUseCase.swift */; };
 		EDFC57972A93731E0007EB98 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EDFC57962A93731E0007EB98 /* .gitignore */; };
 		EDFC57992A93733B0007EB98 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57982A93733B0007EB98 /* APIKey.swift */; };
 		EDFC579B2A93734C0007EB98 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC579A2A93734C0007EB98 /* Endpoint.swift */; };
@@ -75,7 +75,7 @@
 		EDFC57882A9357F80007EB98 /* VideoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetail.swift; sourceTree = "<group>"; };
 		EDFC578B2A935A130007EB98 /* FetchPopularMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopularMoviesUseCase.swift; sourceTree = "<group>"; };
 		EDFC578F2A9370630007EB98 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
-		EDFC57912A9371390007EB98 /* FetchMovieDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMovieDetailUseCase.swift; sourceTree = "<group>"; };
+		EDFC57912A9371390007EB98 /* FetchMovieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMovieDetailsUseCase.swift; sourceTree = "<group>"; };
 		EDFC57962A93731E0007EB98 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EDFC57982A93733B0007EB98 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		EDFC579A2A93734C0007EB98 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -276,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFC578B2A935A130007EB98 /* FetchPopularMoviesUseCase.swift */,
-				EDFC57912A9371390007EB98 /* FetchMovieDetailUseCase.swift */,
+				EDFC57912A9371390007EB98 /* FetchMovieDetailsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 				EDFC577C2A934A780007EB98 /* AppDIContainer.swift in Sources */,
 				EDFC57B12A9389D30007EB98 /* CallRequestable.swift in Sources */,
 				ED607C902A93246F00859DFC /* AppDelegate.swift in Sources */,
-				EDFC57922A9371390007EB98 /* FetchMovieDetailUseCase.swift in Sources */,
+				EDFC57922A9371390007EB98 /* FetchMovieDetailsUseCase.swift in Sources */,
 				ED607C922A93246F00859DFC /* SceneDelegate.swift in Sources */,
 				EDFC57902A9370630007EB98 /* MovieRepository.swift in Sources */,
 				EDE518512A9625F300C16C9E /* Reusable.swift in Sources */,

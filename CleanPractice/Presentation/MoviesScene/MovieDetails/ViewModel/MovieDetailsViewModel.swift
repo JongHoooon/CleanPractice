@@ -35,18 +35,19 @@ final class DefaultMovieDetailsViewModel: MovieDetailsViewModel {
     
     private let actions: MovieDetailViewModelActions
     private let id: Int
-    private let movieRepository: MovieRepository
+    private let fetchMovieDetailsUseCase: FetchMovieDetailsUseCase
+    #warning("image fetch는 use case는 아니여서 직적 호출한다??")
     private let imageRepository: ImageRepository
     
     init(
         actions: MovieDetailViewModelActions,
         id: Int,
-        movieRepository: MovieRepository,
+        fetchMovieDetailsUseCase: FetchMovieDetailsUseCase,
         imageRepostiroy: ImageRepository
     ) {
         self.actions = actions
         self.id = id
-        self.movieRepository = movieRepository
+        self.fetchMovieDetailsUseCase = fetchMovieDetailsUseCase
         self.imageRepository = imageRepostiroy
     }
     
@@ -54,7 +55,7 @@ final class DefaultMovieDetailsViewModel: MovieDetailsViewModel {
     func viewDidLoad() {
         Task {
             do {
-                let movieDetail = try await movieRepository.fetchDetail(id: id)
+                let movieDetail = try await fetchMovieDetailsUseCase.execute(id: id)
                 Task {
                     let backdropImageData = try await imageRepository.fetchImage(imagePath: movieDetail.backdropPath ?? "")
                     backdropImageDataRelay.accept(backdropImageData)

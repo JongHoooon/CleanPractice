@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol FetchMovieDetailUseCase {
+protocol FetchMovieDetailsUseCase {
     func execute(id: Int) async throws -> VideoDetail
 }
 
-final class DefaultFetchMovieDetailUseCase: FetchMovieDetailUseCase {
+final class DefaultFetchMovieDetailsUseCase: FetchMovieDetailsUseCase {
         
     private let movieRepository: MovieRepository
     
@@ -24,3 +24,5 @@ final class DefaultFetchMovieDetailUseCase: FetchMovieDetailUseCase {
         return try await movieRepository.fetchDetail(id: id)
     }
 }
+
+#warning("view model은 domain에 의존해도 괜찮은데 꼭 use case를 써야하는지??? ")
