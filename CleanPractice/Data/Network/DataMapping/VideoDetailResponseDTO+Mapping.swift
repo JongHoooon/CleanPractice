@@ -50,6 +50,7 @@ extension VideoDetailResponseDTO {
         return VideoDetail(
             id: id,
             backdropPath: getImageURL(path: backdropPath),
+            posterPath: getImageURL(path: posterPath),
             genres: genres?.compactMap { $0.name },
             title: title,
             overView: overview,

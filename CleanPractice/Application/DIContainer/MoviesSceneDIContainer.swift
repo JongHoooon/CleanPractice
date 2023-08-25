@@ -73,7 +73,12 @@ extension MoviesSceneDIContainer: MoviesListCoordinatorDependencies {
         actions: MovieDetailViewModelActions,
         id: Int
     ) -> MovieDetailsViewModel {
-        return DefaultMovieDetailsViewModel(actions: actions, id: id)
+        return DefaultMovieDetailsViewModel(
+            actions: actions,
+            id: id,
+            movieRepository: makeMovieRepository(),
+            imageRepostiroy: makeImageRepository()
+        )
     }
     
 

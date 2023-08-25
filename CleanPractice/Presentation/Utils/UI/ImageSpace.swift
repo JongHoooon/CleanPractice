@@ -8,10 +8,14 @@
 import UIKit
 
 enum ImageSpace {
-    static let popcornImage = UIImage(systemName: "popcorn.fill")?
-        .withTintColor(
-            .systemGray,
-            renderingMode: .alwaysOriginal
-        )
-    static let chevronLeft = UIImage(systemName: "chevron.backward")
+    enum Placeholer {
+        static let popcornImage = UIImage(systemName: "popcorn.fill")?
+            .withTintColor(
+                .systemGray,
+                renderingMode: .alwaysOriginal
+            )
+    }
+    enum Icon {
+        static let chevronLeft = UIImage(systemName: "chevron.backward")        
+    }
 }

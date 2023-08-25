@@ -21,7 +21,7 @@ final class MoviesListItemCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemGray6
-        imageView.image = ImageSpace.popcornImage
+        imageView.image = ImageSpace.Placeholer.popcornImage
         
         return imageView   
     }()
@@ -88,7 +88,7 @@ final class MoviesListItemCell: UITableViewCell {
                 posterImageView.image = UIImage(data: imageData)
             } catch {
                 print(error)
-                posterImageView.image = ImageSpace.popcornImage
+                posterImageView.image = ImageSpace.Placeholer.popcornImage
             }
         }
     }

@@ -8,6 +8,7 @@
 struct VideoDetail {
     let id: Int
     let backdropPath: String?
+    let posterPath: String?
     let genres: [String]?
     let title: String?
     let overView: String?
