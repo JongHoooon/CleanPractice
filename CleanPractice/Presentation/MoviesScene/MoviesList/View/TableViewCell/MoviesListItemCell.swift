@@ -22,7 +22,7 @@ final class MoviesListItemCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemGray6
         imageView.image = ImageSpace.Placeholer.popcornImage
-        
+        imageView.clipsToBounds = true
         return imageView   
     }()
     
@@ -32,7 +32,6 @@ final class MoviesListItemCell: UITableViewCell {
         label.textColor = .label
         label.text = "오펜하이머"
         label.numberOfLines = 0
-        
         return label
     }()
     
@@ -41,7 +40,6 @@ final class MoviesListItemCell: UITableViewCell {
         label.font = .systemFont(ofSize: 15.0, weight: .medium)
         label.textColor = .label
         label.text = "⭐️ 9.9  2022-01-01"
-        
         return label
     }()
     
