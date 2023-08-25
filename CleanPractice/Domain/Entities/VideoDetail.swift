@@ -7,11 +7,11 @@
 
 struct VideoDetail {
     let id: Int
-    let backdropPath: String
-    let genres: [String]
-    let title: String
-    let overView: String
-    let runtime: Int
-    let voteAverage: Double
-    let releaseDate: String
+    let backdropPath: String?
+    let genres: [String]?
+    let title: String?
+    let overView: String?
+    let runtime: Int?
+    let voteAverage: Double?
+    let releaseDate: String?
 }

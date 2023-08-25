@@ -6,9 +6,9 @@
 //
 
 struct PopularMoviesResponseDTO: Decodable {
-    let page: Int?
-    let videoDTOs: [VideoDTO]?
-    let totalPages, totalResults: Int?
+    let page: Int
+    let videoDTOs: [VideoDTO]
+    let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
         case page
@@ -21,7 +21,7 @@ struct PopularMoviesResponseDTO: Decodable {
         let adult: Bool?
         let backdropPath: String?
         let genreIDS: [Int]?
-        let id: Int?
+        let id: Int
         let originalLanguage: String
         let originalTitle, overview: String?
         let popularity: Double?
@@ -52,9 +52,9 @@ struct PopularMoviesResponseDTO: Decodable {
 extension PopularMoviesResponseDTO {
     func toDomain() -> VideosPage {
         return VideosPage(
-            page: page ?? -1,
-            totalPages: totalPages ?? -1,
-            videos: videoDTOs?.compactMap { $0.toDomain() } ?? []
+            page: page,
+            totalPages: totalPages,
+            videos: videoDTOs.compactMap { $0.toDomain() }
         )
     }
 }
@@ -64,8 +64,8 @@ extension PopularMoviesResponseDTO.VideoDTO {
         return Video(
             id: id ?? -1,
             posterPath: getImageURL(path: posterPath),
-            title: title ?? "",
-            voteAverage: voteAverage ?? -1.0,
+            title: title,
+            voteAverage: voteAverage,
             releaseDate: tranformDateFormat(date: releaseDate)
         )
     }

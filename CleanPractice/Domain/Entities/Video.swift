@@ -7,10 +7,10 @@
 
 struct Video {
     let id: Int
-    let posterPath: String
-    let title: String
-    let voteAverage: Double
-    let releaseDate: String
+    let posterPath: String?
+    let title: String?
+    let voteAverage: Double?
+    let releaseDate: String?
 }
 
 struct VideosPage {

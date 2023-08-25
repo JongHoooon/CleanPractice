@@ -11,7 +11,7 @@ struct VideoDetailResponseDTO: Codable {
     let budget: Int?
     let genres: [GenreDTO]?
     let homepage: String?
-    let id: Int?
+    let id: Int
     let imdbID, originalLanguage, originalTitle, overview: String?
     let popularity: Double?
     let posterPath: String?
@@ -39,8 +39,8 @@ struct VideoDetailResponseDTO: Codable {
     }
 
     struct GenreDTO: Codable {
-        let id: Int?
-        let name: String?
+        let id: Int
+        let name: String
     }
 }
 
@@ -48,13 +48,13 @@ struct VideoDetailResponseDTO: Codable {
 extension VideoDetailResponseDTO {
     func toDomain() -> VideoDetail {
         return VideoDetail(
-            id: id ?? -1,
+            id: id,
             backdropPath: getImageURL(path: backdropPath),
-            genres: genres?.compactMap { $0.name } ?? [],
-            title: title ?? "",
-            overView: overview ?? "",
-            runtime: runtime ?? -1,
-            voteAverage: voteAverage ?? -1,
+            genres: genres?.compactMap { $0.name },
+            title: title,
+            overView: overview,
+            runtime: runtime,
+            voteAverage: voteAverage,
             releaseDate: tranformDateFormat(date: releaseDate)
         )
     }

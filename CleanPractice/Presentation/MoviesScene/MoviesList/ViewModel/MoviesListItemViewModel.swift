@@ -25,10 +25,10 @@ final class MoviesListItemViewModel {
     
     // MARK: - Init
     init(movie: Video) {
-        let infoText = "⭐️ \(String(format: "%.1f", movie.voteAverage))  \(movie.releaseDate)"
-        titleTextRelay = .init(value: movie.title)
+        let infoText = "⭐️ \(String(format: "%.1f", movie.voteAverage ?? 0.0))  \(movie.releaseDate)"
+        titleTextRelay = .init(value: movie.title ?? "제목이 없습니다.")
         infoTextRelay = .init(value: infoText)
-        posterImagePath = .init(value: movie.posterPath)
+        posterImagePath = .init(value: movie.posterPath ?? "")
     }
     
     // MARK: - Output
