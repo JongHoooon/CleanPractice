@@ -10,8 +10,8 @@ import Foundation
 final class AppDIContainer {
     
     // MARK: - DIContainers of scene
-    func makeMoviesSceneDIContainer() -> MoviesSceneDIContainer {
-        return MoviesSceneDIContainer()
+    func makeTabBarSceneDIContainer() -> TabBarSceneDIContainer {
+        return TabBarSceneDIContainer()
     }
     
     func makeAuthSceneDIContainer() -> AuthSceneDIContainer {

@@ -66,8 +66,10 @@ final class AppFlowCoordinator: Coordinatorable {
 #warning("탭바 생성 후 탭바로 이동하게 수정해야함")
 extension AppFlowCoordinator: AuthCoordinatorDelegate {
     func showTabBar() {
-        let moviesSceneDIContainer = appDIContainer.makeMoviesSceneDIContainer()
-        let flow = moviesSceneDIContainer.makeMoviesSceneCoordinator(navigationController: navigationController)
+        #warning("hidden으로 숨겨주는게 맞는지,,?? 네비게이션의 루트뷰를 바꿔주는게 맞지 않을까??")
+//        navigationController.isNavigationBarHidden = true
+        let tabBarSceneDIContainer = appDIContainer.makeTabBarSceneDIContainer()
+        let flow = tabBarSceneDIContainer.makeTabBarFlowCoordinator(navigationController: navigationController)
         childCoordinators = [flow]
         navigationController.viewControllers.removeAll()
         flow.start()
