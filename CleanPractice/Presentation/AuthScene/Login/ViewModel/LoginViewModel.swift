@@ -12,7 +12,7 @@ struct LoginViewModelActions {
 }
 
 protocol LoginViewModelInput {
-    
+    func loginButtonTapped()
 }
 
 protocol LoginViewModelOutput {
@@ -27,5 +27,11 @@ final class DefaultLoginViewModel: LoginViewModel {
     
     init(actions: LoginViewModelActions) {
         self.actions = actions
+    }
+    
+    // MARK: - Input
+    func loginButtonTapped() {
+        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isLoggedIn.key)
+        actions.showTabBar()
     }
 }

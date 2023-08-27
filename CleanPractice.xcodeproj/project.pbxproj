@@ -28,6 +28,7 @@
 		EDF94D552A9B3668008589CB /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D542A9B3668008589CB /* AuthCoordinator.swift */; };
 		EDF94D572A9B36B6008589CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D562A9B36B6008589CB /* LoginViewController.swift */; };
 		EDF94D592A9B36FA008589CB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D582A9B36FA008589CB /* LoginViewModel.swift */; };
+		EDF94D5B2A9B92EC008589CB /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D5A2A9B92EC008589CB /* UserDefaultsKeys.swift */; };
 		EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */; };
 		EDFC577C2A934A780007EB98 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577B2A934A780007EB98 /* AppDIContainer.swift */; };
 		EDFC577E2A934B040007EB98 /* MoviesSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */; };
@@ -74,6 +75,7 @@
 		EDF94D542A9B3668008589CB /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		EDF94D562A9B36B6008589CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EDF94D582A9B36FA008589CB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EDF94D5A2A9B92EC008589CB /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		EDFC577B2A934A780007EB98 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSceneDIContainer.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				EDE518272A94971D00C16C9E /* UI */,
 				EDE518502A9625F300C16C9E /* Reusable.swift */,
 				EDE518522A96306C00C16C9E /* ImageFetchable.swift */,
+				EDF94D5A2A9B92EC008589CB /* UserDefaultsKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				EDE518512A9625F300C16C9E /* Reusable.swift in Sources */,
 				EDE5184E2A961C8B00C16C9E /* MoviesListItemViewModel.swift in Sources */,
 				EDFC57832A934FE30007EB98 /* AppFlowCoordinator.swift in Sources */,
+				EDF94D5B2A9B92EC008589CB /* UserDefaultsKeys.swift in Sources */,
 				EDE518532A96306C00C16C9E /* ImageFetchable.swift in Sources */,
 				EDFC57892A9357F80007EB98 /* VideoDetail.swift in Sources */,
 				EDFC579B2A93734C0007EB98 /* Endpoint.swift in Sources */,

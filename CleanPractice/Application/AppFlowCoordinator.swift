@@ -55,7 +55,7 @@ final class AppFlowCoordinator: Coordinatorable {
 //            showTabBar()
 //        } else
             
-        switch UserDefaults.standard.bool(forKey: "isLoggedIn") {
+        switch UserDefaults.standard.bool(forKey: UserDefaultsKeys.isLoggedIn.key) {
         case true:      showTabBar()
         case false:     showLoginView()
         }
@@ -68,6 +68,8 @@ extension AppFlowCoordinator: AuthCoordinatorDelegate {
     func showTabBar() {
         let moviesSceneDIContainer = appDIContainer.makeMoviesSceneDIContainer()
         let flow = moviesSceneDIContainer.makeMoviesSceneCoordinator(navigationController: navigationController)
+        childCoordinators = [flow]
+        navigationController.viewControllers.removeAll()
         flow.start()
     }
 }
@@ -77,6 +79,15 @@ private extension AppFlowCoordinator {
         let AuthSceneDIContainer = appDIContainer.makeAuthSceneDIContainer()
         let flow = AuthSceneDIContainer.makeAuthCoordinator(navigationController: navigationController)
         flow.delegate = self
+        childCoordinators = [flow]
+        navigationController.viewControllers.removeAll()
         flow.start()
     }
 }
+
+#warning("coordinator 종료되는 시점 확인하는 부분 꼭 필요한가??")
+//extension AppFlowCoordinator: CoordinatorFinishDelegate {
+//    func coordinatorDidFinish(childCoordinator: Coordinatorable) {
+//
+//    }
+//}

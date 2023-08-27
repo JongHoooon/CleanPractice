@@ -33,7 +33,7 @@ final class MoviesCoordinator: Coordinatorable {
     func start() {
         let actions = MoviesListViewModelActions(showMovieDetails: showMovieDetails)
         let vc = dependencies.makeMoviesListViewController(actions: actions)
-        navigationController.pushViewController(vc, animated: false)
+        navigationController.pushViewController(vc, animated: true)
     }
 }
 

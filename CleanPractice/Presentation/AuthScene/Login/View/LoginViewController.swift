@@ -14,6 +14,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Properties
     private let viewModel: LoginViewModel
+    private let disposeBag = DisposeBag()
     
     private let loginButton: UIButton = {
         let button = UIButton()
@@ -40,7 +41,31 @@ final class LoginViewController: UIViewController {
         
         configureView()
         configureLayout()
+        bind()
     }
+}
+
+// MARK: - Bind
+private extension LoginViewController {
+    
+    func bind() {
+        bindInput()
+        bindOutput()
+    }
+    
+    func bindInput() {
+        loginButton.rx.tap
+            .subscribe(
+                with: self,
+                onNext: { owner, _ in
+                    owner.viewModel.loginButtonTapped()
+                }
+            )
+            .disposed(by: disposeBag)
+    }
+    
+    func bindOutput() {}
+    
 }
 
 // MARK: - Private
