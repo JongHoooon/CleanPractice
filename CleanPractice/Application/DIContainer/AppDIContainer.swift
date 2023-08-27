@@ -13,4 +13,8 @@ final class AppDIContainer {
     func makeMoviesSceneDIContainer() -> MoviesSceneDIContainer {
         return MoviesSceneDIContainer()
     }
+    
+    func makeAuthSceneDIContainer() -> AuthSceneDIContainer {
+        return AuthSceneDIContainer()
+    }
 }

@@ -13,15 +13,17 @@ protocol MoviesListCoordinatorDependencies {
 }
 
 final class MoviesCoordinator: Coordinatorable {
-
-    #warning("weak로 선언하는 이유??")
-    private weak var navigationController: UINavigationController?
-    private let dependencies: MoviesListCoordinatorDependencies
     
-    private weak var moiesListVC: MoviesListViewController?
+    
+    #warning("weak로 선언하는 이유??")
+    var navigationController: UINavigationController
+    var childCoordinators: [Coordinatorable] = []
+    var finishDelegate: CoordinatorFinishDelegate?
+    private let dependencies: MoviesListCoordinatorDependencies
+
     
     init(
-        navigationController: UINavigationController? = nil,
+        navigationController: UINavigationController,
         dependencies: MoviesListCoordinatorDependencies
     ) {
         self.navigationController = navigationController
@@ -31,19 +33,18 @@ final class MoviesCoordinator: Coordinatorable {
     func start() {
         let actions = MoviesListViewModelActions(showMovieDetails: showMovieDetails)
         let vc = dependencies.makeMoviesListViewController(actions: actions)
-        navigationController?.pushViewController(vc, animated: false)
-        moiesListVC = vc
+        navigationController.pushViewController(vc, animated: false)
     }
 }
 
-extension MoviesCoordinator {
+private extension MoviesCoordinator {
     func showMovieDetails(id: Int) {
         let actions = MovieDetailViewModelActions(closeMovieDetails: closeMovieDetails)
         let vc = dependencies.makeMovieDetailsViewController(actions: actions, id: id)
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController.pushViewController(vc, animated: true)
     }
     
     func closeMovieDetails() {
-        navigationController?.popViewController(animated: true)
+        navigationController.popViewController(animated: true)
     }
 }

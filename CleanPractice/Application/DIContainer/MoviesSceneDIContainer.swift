@@ -87,6 +87,4 @@ extension MoviesSceneDIContainer: MoviesListCoordinatorDependencies {
             imageRepostiroy: makeImageRepository()
         )
     }
-     
-
 }

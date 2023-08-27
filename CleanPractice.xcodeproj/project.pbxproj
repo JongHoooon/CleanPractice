@@ -24,6 +24,10 @@
 		EDE518602A96428400C16C9E /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5185F2A96428400C16C9E /* MovieDetailsViewModel.swift */; };
 		EDE518922A98B92800C16C9E /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE518912A98B92800C16C9E /* ImageRepository.swift */; };
 		EDE518942A98B9BB00C16C9E /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE518932A98B9BB00C16C9E /* DefaultImageRepository.swift */; };
+		EDF94D532A9B34C8008589CB /* AuthSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D522A9B34C8008589CB /* AuthSceneDIContainer.swift */; };
+		EDF94D552A9B3668008589CB /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D542A9B3668008589CB /* AuthCoordinator.swift */; };
+		EDF94D572A9B36B6008589CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D562A9B36B6008589CB /* LoginViewController.swift */; };
+		EDF94D592A9B36FA008589CB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D582A9B36FA008589CB /* LoginViewModel.swift */; };
 		EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */; };
 		EDFC577C2A934A780007EB98 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577B2A934A780007EB98 /* AppDIContainer.swift */; };
 		EDFC577E2A934B040007EB98 /* MoviesSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */; };
@@ -66,6 +70,10 @@
 		EDE518912A98B92800C16C9E /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		EDE518932A98B9BB00C16C9E /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
 		EDF94D4C2A98DEEC008589CB /* memo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = memo.md; sourceTree = "<group>"; };
+		EDF94D522A9B34C8008589CB /* AuthSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSceneDIContainer.swift; sourceTree = "<group>"; };
+		EDF94D542A9B3668008589CB /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		EDF94D562A9B36B6008589CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EDF94D582A9B36FA008589CB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		EDFC577B2A934A780007EB98 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSceneDIContainer.swift; sourceTree = "<group>"; };
@@ -217,9 +225,52 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EDF94D4D2A9B30C9008589CB /* AuthScene */ = {
+			isa = PBXGroup;
+			children = (
+				EDF94D4E2A9B30E9008589CB /* Flows */,
+				EDF94D4F2A9B30F1008589CB /* Login */,
+			);
+			path = AuthScene;
+			sourceTree = "<group>";
+		};
+		EDF94D4E2A9B30E9008589CB /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				EDF94D542A9B3668008589CB /* AuthCoordinator.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		EDF94D4F2A9B30F1008589CB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EDF94D502A9B3115008589CB /* ViewModel */,
+				EDF94D512A9B3119008589CB /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EDF94D502A9B3115008589CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDF94D582A9B36FA008589CB /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EDF94D512A9B3119008589CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDF94D562A9B36B6008589CB /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EDFC57762A9349C90007EB98 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EDF94D4D2A9B30C9008589CB /* AuthScene */,
 				EDFC57772A9349DF0007EB98 /* MoviesScene */,
 				EDE518242A9496D200C16C9E /* Utils */,
 			);
@@ -241,6 +292,7 @@
 			children = (
 				EDFC577B2A934A780007EB98 /* AppDIContainer.swift */,
 				EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */,
+				EDF94D522A9B34C8008589CB /* AuthSceneDIContainer.swift */,
 			);
 			path = DIContainer;
 			sourceTree = "<group>";
@@ -463,10 +515,13 @@
 			files = (
 				EDFC577C2A934A780007EB98 /* AppDIContainer.swift in Sources */,
 				EDFC57B12A9389D30007EB98 /* CallRequestable.swift in Sources */,
+				EDF94D532A9B34C8008589CB /* AuthSceneDIContainer.swift in Sources */,
 				ED607C902A93246F00859DFC /* AppDelegate.swift in Sources */,
+				EDF94D552A9B3668008589CB /* AuthCoordinator.swift in Sources */,
 				EDFC57922A9371390007EB98 /* FetchMovieDetailsUseCase.swift in Sources */,
 				ED607C922A93246F00859DFC /* SceneDelegate.swift in Sources */,
 				EDFC57902A9370630007EB98 /* MovieRepository.swift in Sources */,
+				EDF94D592A9B36FA008589CB /* LoginViewModel.swift in Sources */,
 				EDE518512A9625F300C16C9E /* Reusable.swift in Sources */,
 				EDE5184E2A961C8B00C16C9E /* MoviesListItemViewModel.swift in Sources */,
 				EDFC57832A934FE30007EB98 /* AppFlowCoordinator.swift in Sources */,
@@ -487,6 +542,7 @@
 				EDFC57872A9354A80007EB98 /* Video.swift in Sources */,
 				EDFC57A82A937ED50007EB98 /* DefaultMovieRepository.swift in Sources */,
 				EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */,
+				EDF94D572A9B36B6008589CB /* LoginViewController.swift in Sources */,
 				EDFC57992A93733B0007EB98 /* APIKey.swift in Sources */,
 				EDFC57BA2A9396820007EB98 /* MoviesListViewModel.swift in Sources */,
 				EDFC57AD2A9380360007EB98 /* PopularMoviesResponseDTO+Mapping.swift in Sources */,
