@@ -25,4 +25,4 @@ final class DefaultFetchMovieDetailsUseCase: FetchMovieDetailsUseCase {
     }
 }
 
-#warning("view model은 domain에 의존해도 괜찮은데 꼭 use case를 써야하는지??? ")
+#warning("view model은 domain에 의존해도 괜찮은데 꼭 인터페이스를 써야하는지???")

@@ -7,6 +7,7 @@
 
 import Alamofire
 
+#warning("static 사용해서 하는게 괜찮은지,,??")
 enum VideoAPI: APIable {
     
     case fetchPopularMovies(page: Int)

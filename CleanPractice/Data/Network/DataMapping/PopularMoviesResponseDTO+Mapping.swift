@@ -5,6 +5,7 @@
 //  Created by JongHoon on 2023/08/21.
 //
 
+#warning("DTO가 꼭 필요할까??")
 struct PopularMoviesResponseDTO: Decodable {
     let page: Int
     let videoDTOs: [VideoDTO]
