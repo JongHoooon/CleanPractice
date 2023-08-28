@@ -7,7 +7,7 @@
 
 import Foundation
 
-#warning("alert는 어떻게??")
+#warning("alert는 Coordinator 사용안해도 괜찮은지???")
 struct TVSeriesListViewModelActions {
     let showLogin: () -> Void
 }

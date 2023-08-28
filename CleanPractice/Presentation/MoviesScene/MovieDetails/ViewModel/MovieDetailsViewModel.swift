@@ -36,7 +36,6 @@ final class DefaultMovieDetailsViewModel: MovieDetailsViewModel {
     private let actions: MovieDetailViewModelActions
     private let id: Int
     private let fetchMovieDetailsUseCase: FetchMovieDetailsUseCase
-    #warning("image fetch는 use case는 아니여서 직적 호출한다??")
     private let imageRepository: ImageRepository
     
     init(

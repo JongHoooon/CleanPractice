@@ -14,7 +14,6 @@ final class MoviesListViewController: UIViewController {
     
     // MARK: - Property
     private let viewModel: MoviesListViewModel
-    #warning("cell 한테 전달해주기 위해 존재하는거같은데,,, 여기있는게 맞는지??")
     private let imagesRepository: ImageRepository
     private let disposeBag = DisposeBag()
     
