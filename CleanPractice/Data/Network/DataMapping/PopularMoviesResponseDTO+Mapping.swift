@@ -49,7 +49,6 @@ struct PopularMoviesResponseDTO: Decodable {
 }
 
 // MARK: - Mapping to Domain
-
 extension PopularMoviesResponseDTO {
     func toDomain() -> VideosPage {
         return VideosPage(
@@ -74,7 +73,6 @@ extension PopularMoviesResponseDTO.VideoDTO {
 
 
 // MARK: - Private
-
 private extension PopularMoviesResponseDTO.VideoDTO {
     
     func getImageURL(path: String?) -> String {
