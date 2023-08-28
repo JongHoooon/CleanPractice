@@ -7,6 +7,7 @@
 
 import UIKit
 
+#warning("TabBar 로 화면 전환시에는 root view를 바꿔주는게 맞지 않을까??")
 protocol TabBarCoordinatorDependencies {
     func makeTabBarController() -> UITabBarController
     func makeMoviesDIContainer() -> MoviesSceneDIContainer
@@ -19,22 +20,20 @@ protocol TabBarCoordinatorDelegate: AnyObject {
 final class TabBarCoordinator: Coordinatorable {
     
     private let dependencies: TabBarCoordinatorDependencies
-    var navigationController: UINavigationController
     var childCoordinators: [Coordinatorable] = []
     var finishDelegate: CoordinatorFinishDelegate?
     
     init(
-        dependencies: TabBarCoordinatorDependencies,
-        navigationController: UINavigationController
+        dependencies: TabBarCoordinatorDependencies
     ) {
         self.dependencies = dependencies
-        self.navigationController = navigationController
     }
     
     func start() {
         let tabBarController = dependencies.makeTabBarController()
         tabBarController.tabBar.tintColor = .label
-        navigationController.pushViewController(tabBarController, animated: true)
+        
+        showTabBar(tabBar: tabBarController)
         
         let moviesSceneNavigationController = UINavigationController()
         
@@ -43,7 +42,6 @@ final class TabBarCoordinator: Coordinatorable {
         ]
         
         startMoviesScene(
-            type: .movies,
             moviesSceneNavigationController: moviesSceneNavigationController
         )
     }
@@ -52,14 +50,30 @@ final class TabBarCoordinator: Coordinatorable {
 private extension TabBarCoordinator {
     
     func startMoviesScene(
-        type: TabBarType,
         moviesSceneNavigationController: UINavigationController
     ) {
+        let type = TabBarType.movies
         moviesSceneNavigationController.tabBarItem.title = type.title
         moviesSceneNavigationController.tabBarItem.image = type.image
         let moviesSceneDIContainer = dependencies.makeMoviesDIContainer()
         let flow = moviesSceneDIContainer.makeMoviesSceneCoordinator(navigationController: moviesSceneNavigationController)
         flow.start()
         childCoordinators.append(flow)
+    }
+    
+    func showTabBar(tabBar: UITabBarController) {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = tabBar
+        sceneDelegate?.window?.makeKeyAndVisible()
+        
+        guard let window = sceneDelegate?.window else { return }
+        
+        UIView.transition(
+            with: window,
+            duration: 0.3,
+            options: [.transitionCrossDissolve],
+            animations: nil
+        )
     }
 }

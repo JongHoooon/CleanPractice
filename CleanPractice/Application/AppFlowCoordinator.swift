@@ -12,7 +12,7 @@ protocol CoordinatorFinishDelegate: AnyObject {
 }
 
 protocol Coordinatorable: AnyObject {
-    var navigationController: UINavigationController { get set }
+    #warning("child를 들고 있는 이유는???")
     var childCoordinators: [Coordinatorable] { get set }
     var finishDelegate: CoordinatorFinishDelegate? { get }
     func start()
@@ -42,19 +42,6 @@ final class AppFlowCoordinator: Coordinatorable {
     }
     
     func start() {
-        #warning("로그인 여부 체크")
-//        In App Flow we can check if user needs to login, if yes we would run login flow
-//        let moviesSceneDIContainer = appDIContainer.makeMoviesSceneDIContainer()
-//        let flow = moviesSceneDIContainer
-//            .makeMoviesSceneCoordinator(navigationController: navigationController)
-//
-//        flow.start()
-        
-//        if
-//        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
-//            showTabBar()
-//        } else
-            
         switch UserDefaults.standard.bool(forKey: UserDefaultsKeys.isLoggedIn.key) {
         case true:      showTabBar()
         case false:     showLoginView()
@@ -63,13 +50,11 @@ final class AppFlowCoordinator: Coordinatorable {
 }
 
 #warning("navigation 관련해서 순환 참조 발생할 위험 있는지???")
-#warning("탭바 생성 후 탭바로 이동하게 수정해야함")
+#warning("chilCoordinators 수정하는 부분 리팩토링 필요")
 extension AppFlowCoordinator: AuthCoordinatorDelegate {
     func showTabBar() {
-        #warning("hidden으로 숨겨주는게 맞는지,,?? 네비게이션의 루트뷰를 바꿔주는게 맞지 않을까??")
-//        navigationController.isNavigationBarHidden = true
         let tabBarSceneDIContainer = appDIContainer.makeTabBarSceneDIContainer()
-        let flow = tabBarSceneDIContainer.makeTabBarFlowCoordinator(navigationController: navigationController)
+        let flow = tabBarSceneDIContainer.makeTabBarFlowCoordinator()
         childCoordinators = [flow]
         navigationController.viewControllers.removeAll()
         flow.start()

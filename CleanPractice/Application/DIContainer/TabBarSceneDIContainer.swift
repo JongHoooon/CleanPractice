@@ -8,10 +8,9 @@
 import UIKit
 
 struct TabBarSceneDIContainer {
-    func makeTabBarFlowCoordinator(navigationController: UINavigationController) -> TabBarCoordinator {
+    func makeTabBarFlowCoordinator() -> TabBarCoordinator {
         return TabBarCoordinator(
-            dependencies: self,
-            navigationController: navigationController
+            dependencies: self
         )
     }
 }
