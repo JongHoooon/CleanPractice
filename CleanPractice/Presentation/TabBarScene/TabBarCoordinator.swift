@@ -23,6 +23,7 @@ final class TabBarCoordinator: Coordinatorable {
     private let dependencies: TabBarCoordinatorDependencies
     var childCoordinators: [Coordinatorable] = []
     var finishDelegate: CoordinatorFinishDelegate?
+    weak var delegate: TabBarCoordinatorDelegate?
     
     init(
         dependencies: TabBarCoordinatorDependencies
@@ -71,6 +72,7 @@ private extension TabBarCoordinator {
         tvSeriesSceneNavigationController.tabBarItem.image = type.image
         let tvSeriesSceneDIContainer = dependencies.makeTVSeriesDIContainer()
         let flow = tvSeriesSceneDIContainer.makeTVSeriesSceneCoordinator(navigationController: tvSeriesSceneNavigationController)
+        flow.delegate = self
         flow.start()
         childCoordinators.append(flow)
     }
@@ -89,5 +91,11 @@ private extension TabBarCoordinator {
             options: [.transitionCrossDissolve],
             animations: nil
         )
+    }
+}
+
+extension TabBarCoordinator: TVSeriesCoordinatorDelegate {
+    func showLoginView() {
+        delegate?.showLoginView()
     }
 }

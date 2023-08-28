@@ -7,11 +7,14 @@
 
 import Foundation
 
+#warning("alert는 어떻게??")
 struct TVSeriesListViewModelActions {
     let showLogin: () -> Void
 }
 
-protocol TVSeriesListViewModelInput {}
+protocol TVSeriesListViewModelInput {
+    func logout()
+}
 
 protocol TVSeriesListViewModelOutput {}
 
@@ -30,6 +33,12 @@ final class DefaultTVSeriesListViewModel: TVSeriesListViewModel {
     ) {
         self.actions = actions
         self.fetchPopularTVSeriesUseCase = fetchPopularTVSeriesUseCase
+    }
+    
+    // MARK: - Input
+    func logout() {
+        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.isLoggedIn.key)
+        actions.showLogin()
     }
 }
 

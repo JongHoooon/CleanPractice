@@ -39,6 +39,19 @@ final class AuthCoordinator: Coordinatorable {
         
         let actions = LoginViewModelActions(showTabBar: showTabBar)
         let vc = dependencies.makeLoginViewController(actions: actions)
-        navigationController.pushViewController(vc, animated: true)
+        
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = vc
+        sceneDelegate?.window?.makeKeyAndVisible()
+        
+        guard let window = sceneDelegate?.window else { return }
+        
+        UIView.transition(
+            with: window,
+            duration: 0.3,
+            options: [.transitionCrossDissolve],
+            animations: nil
+        )
     }
 }

@@ -16,7 +16,8 @@ enum ImageSpace {
             )
     }
     enum Icon {
-        static let chevronLeft = UIImage(systemName: "chevron.backward")        
+        static let chevronLeft = UIImage(systemName: "chevron.backward")
+        static let logout = UIImage(systemName: "door.right.hand.open")
     }
     enum TabBarIcon {
         static let movie = UIImage(systemName: "film.stack")

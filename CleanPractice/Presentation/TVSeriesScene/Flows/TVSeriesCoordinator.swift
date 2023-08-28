@@ -12,12 +12,17 @@ protocol TVSeriesCoordinatorDependencies {
     func makeLoginViewController(actions: LoginViewModelActions) -> LoginViewController
 }
 
+protocol TVSeriesCoordinatorDelegate: AnyObject {
+    func showLoginView()
+}
+
 final class TVSeriesCoordinator: Coordinatorable {
     
     private let navigationController: UINavigationController
     private let dependencies: TVSeriesCoordinatorDependencies
     var childCoordinators: [Coordinatorable] = []
     var finishDelegate: CoordinatorFinishDelegate?
+    weak var delegate: TVSeriesCoordinatorDelegate?
     
     init(
         navigationController: UINavigationController,
@@ -34,6 +39,6 @@ final class TVSeriesCoordinator: Coordinatorable {
     }
     
     func showLogin() {
-        
+        delegate?.showLoginView()
     }
 }

@@ -55,13 +55,14 @@ extension AppFlowCoordinator: AuthCoordinatorDelegate {
     func showTabBar() {
         let tabBarSceneDIContainer = appDIContainer.makeTabBarSceneDIContainer()
         let flow = tabBarSceneDIContainer.makeTabBarFlowCoordinator()
+        flow.delegate = self
         childCoordinators = [flow]
         navigationController.viewControllers.removeAll()
         flow.start()
     }
 }
 
-private extension AppFlowCoordinator {
+extension AppFlowCoordinator: TabBarCoordinatorDelegate {
     func showLoginView() {
         let AuthSceneDIContainer = appDIContainer.makeAuthSceneDIContainer()
         let flow = AuthSceneDIContainer.makeAuthCoordinator(navigationController: navigationController)
