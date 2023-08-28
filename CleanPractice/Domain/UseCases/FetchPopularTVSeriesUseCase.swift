@@ -11,7 +11,7 @@ protocol FectchPopularTVSeriesUseCase {
     func execute(page: Int) async throws -> VideosPage
 }
 
-final class DefaultFectchPopularTVSeriesUseCase: FetchPopularMoviesUseCase {
+final class DefaultFectchPopularTVSeriesUseCase: FectchPopularTVSeriesUseCase {
     
     private let tvSeriesRepository: TVSeriesRepository
     

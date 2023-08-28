@@ -21,10 +21,15 @@ final class DefaultTVSeriesListViewModel: TVSeriesListViewModel {
     
     // MARK: - Properties
     private let actions: TVSeriesListViewModelActions
+    private let fetchPopularTVSeriesUseCase: FectchPopularTVSeriesUseCase
     
     // MARK: - Init
-    init(actions: TVSeriesListViewModelActions) {
+    init(
+        actions: TVSeriesListViewModelActions,
+        fetchPopularTVSeriesUseCase: FectchPopularTVSeriesUseCase
+    ) {
         self.actions = actions
+        self.fetchPopularTVSeriesUseCase = fetchPopularTVSeriesUseCase
     }
 }
 

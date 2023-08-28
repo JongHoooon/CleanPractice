@@ -7,7 +7,6 @@
 
 import UIKit
 
-#warning("Struct VS Class ??")
 struct MoviesSceneDIContainer {
     
     func makeMoviesSceneCoordinator(

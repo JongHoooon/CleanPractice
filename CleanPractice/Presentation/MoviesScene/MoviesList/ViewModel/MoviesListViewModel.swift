@@ -28,7 +28,6 @@ protocol MoviesListViewModel: MoviesListViewModelInput, MoviesListViewModelOutpu
 final class DefaultMoviesListViewModel: MoviesListViewModel {
     
     private let fetchPopularMoviesUseCase: FetchPopularMoviesUseCase
-#warning("let으로 할건데 왜 opional로 ???? ")
     private let actions: MoviesListViewModelActions?
     
     private var page: [VideosPage] = []

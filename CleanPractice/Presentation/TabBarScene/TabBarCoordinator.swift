@@ -11,6 +11,7 @@ import UIKit
 protocol TabBarCoordinatorDependencies {
     func makeTabBarController() -> UITabBarController
     func makeMoviesDIContainer() -> MoviesSceneDIContainer
+    func makeTVSeriesDIContainer() -> TVSeriesDIContainer
 }
 
 protocol TabBarCoordinatorDelegate: AnyObject {
@@ -36,14 +37,15 @@ final class TabBarCoordinator: Coordinatorable {
         showTabBar(tabBar: tabBarController)
         
         let moviesSceneNavigationController = UINavigationController()
+        let tvSeriesSceneNavigationController = UINavigationController()
         
         tabBarController.viewControllers = [
-            moviesSceneNavigationController
+            moviesSceneNavigationController,
+            tvSeriesSceneNavigationController
         ]
         
-        startMoviesScene(
-            moviesSceneNavigationController: moviesSceneNavigationController
-        )
+        startMoviesScene(moviesSceneNavigationController: moviesSceneNavigationController)
+        startTVSeriesScene(tvSeriesSceneNavigationController: tvSeriesSceneNavigationController)
     }
 }
 
@@ -57,6 +59,18 @@ private extension TabBarCoordinator {
         moviesSceneNavigationController.tabBarItem.image = type.image
         let moviesSceneDIContainer = dependencies.makeMoviesDIContainer()
         let flow = moviesSceneDIContainer.makeMoviesSceneCoordinator(navigationController: moviesSceneNavigationController)
+        flow.start()
+        childCoordinators.append(flow)
+    }
+    
+    func startTVSeriesScene(
+        tvSeriesSceneNavigationController: UINavigationController
+    ) {
+        let type = TabBarType.tvSeries
+        tvSeriesSceneNavigationController.tabBarItem.title = type.title
+        tvSeriesSceneNavigationController.tabBarItem.image = type.image
+        let tvSeriesSceneDIContainer = dependencies.makeTVSeriesDIContainer()
+        let flow = tvSeriesSceneDIContainer.makeTVSeriesSceneCoordinator(navigationController: tvSeriesSceneNavigationController)
         flow.start()
         childCoordinators.append(flow)
     }

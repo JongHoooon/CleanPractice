@@ -5,4 +5,35 @@
 //  Created by JongHoon on 2023/08/28.
 //
 
-//import
+import UIKit
+
+protocol TVSeriesCoordinatorDependencies {
+    func makeTVSeriesViewController(actions: TVSeriesListViewModelActions) -> TVSeriesListViewController
+    func makeLoginViewController(actions: LoginViewModelActions) -> LoginViewController
+}
+
+final class TVSeriesCoordinator: Coordinatorable {
+    
+    private let navigationController: UINavigationController
+    private let dependencies: TVSeriesCoordinatorDependencies
+    var childCoordinators: [Coordinatorable] = []
+    var finishDelegate: CoordinatorFinishDelegate?
+    
+    init(
+        navigationController: UINavigationController,
+        dependencies: TVSeriesCoordinatorDependencies
+    ) {
+        self.navigationController = navigationController
+        self.dependencies = dependencies
+    }
+    
+    func start() {
+        let actions = TVSeriesListViewModelActions(showLogin: showLogin)
+        let vc = dependencies.makeTVSeriesViewController(actions: actions)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showLogin() {
+        
+    }
+}

@@ -14,7 +14,6 @@ protocol MoviesListCoordinatorDependencies {
 
 final class MoviesCoordinator: Coordinatorable {
     
-    
     #warning("weak로 선언하는 이유??")
     var navigationController: UINavigationController
     var childCoordinators: [Coordinatorable] = []

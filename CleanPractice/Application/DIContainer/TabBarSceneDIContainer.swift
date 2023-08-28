@@ -23,4 +23,8 @@ extension TabBarSceneDIContainer: TabBarCoordinatorDependencies {
     func makeMoviesDIContainer() -> MoviesSceneDIContainer {
         return MoviesSceneDIContainer()
     }
+    
+    func makeTVSeriesDIContainer() -> TVSeriesDIContainer {
+        return TVSeriesDIContainer()
+    }
 }

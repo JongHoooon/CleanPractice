@@ -39,6 +39,7 @@
 		EDF94DB82A9CC44C008589CB /* TVSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94DB72A9CC44C008589CB /* TVSeriesRepository.swift */; };
 		EDF94DBA2A9CC611008589CB /* DefaultTVSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94DB92A9CC610008589CB /* DefaultTVSeriesRepository.swift */; };
 		EDF94DBC2A9CC71E008589CB /* PopularTVSeriesDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94DBB2A9CC71E008589CB /* PopularTVSeriesDTO+Mapping.swift */; };
+		EDF94DBE2A9CCB11008589CB /* TVSeriesDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94DBD2A9CCB11008589CB /* TVSeriesDIContainer.swift */; };
 		EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */; };
 		EDFC577C2A934A780007EB98 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577B2A934A780007EB98 /* AppDIContainer.swift */; };
 		EDFC577E2A934B040007EB98 /* MoviesSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */; };
@@ -96,6 +97,7 @@
 		EDF94DB72A9CC44C008589CB /* TVSeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesRepository.swift; sourceTree = "<group>"; };
 		EDF94DB92A9CC610008589CB /* DefaultTVSeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTVSeriesRepository.swift; sourceTree = "<group>"; };
 		EDF94DBB2A9CC71E008589CB /* PopularTVSeriesDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopularTVSeriesDTO+Mapping.swift"; sourceTree = "<group>"; };
+		EDF94DBD2A9CCB11008589CB /* TVSeriesDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesDIContainer.swift; sourceTree = "<group>"; };
 		EDFC57782A9349EF0007EB98 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		EDFC577B2A934A780007EB98 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSceneDIContainer.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				EDF94D522A9B34C8008589CB /* AuthSceneDIContainer.swift */,
 				EDF94D5F2A9B9977008589CB /* TabBarSceneDIContainer.swift */,
 				EDFC577D2A934B040007EB98 /* MoviesSceneDIContainer.swift */,
+				EDF94DBD2A9CCB11008589CB /* TVSeriesDIContainer.swift */,
 			);
 			path = DIContainer;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				EDFC57792A9349EF0007EB98 /* MoviesListViewController.swift in Sources */,
 				EDF94D572A9B36B6008589CB /* LoginViewController.swift in Sources */,
 				EDFC57992A93733B0007EB98 /* APIKey.swift in Sources */,
+				EDF94DBE2A9CCB11008589CB /* TVSeriesDIContainer.swift in Sources */,
 				EDF94DBC2A9CC71E008589CB /* PopularTVSeriesDTO+Mapping.swift in Sources */,
 				EDFC57BA2A9396820007EB98 /* MoviesListViewModel.swift in Sources */,
 				EDFC57AD2A9380360007EB98 /* PopularMoviesResponseDTO+Mapping.swift in Sources */,
